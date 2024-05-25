@@ -71,7 +71,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative  boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-start space-x-4 px-4 h-12 items-center "
+      className="relative  border border-zinc-400 dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-start space-x-4 px-4 h-12 items-center "
     >
       {children}
     </nav>
@@ -117,6 +117,20 @@ export const HoveredLink = ({ children, ...rest }: any) => {
       className="text-neutral-700 dark:text-neutral-200 hover:text-black "
     >
       {children}
+    </Link>
+  );
+};
+
+
+
+export const IconLink = ({ children, icon, ...rest }: any) => {
+  return (
+    <Link
+      {...rest}
+      className="text-neutral-700 dark:text-neutral-200 hover:text-black flex gap-2 flex-col items-center hover:bg-zinc-200 rounded-lg p-4"
+    >
+      <div>{icon ? icon : <div className="w-10 h-10 block border rounded bg-zinc-500">&nbsp;</div>}</div>
+      <div className="text-xs">{children}</div>
     </Link>
   );
 };

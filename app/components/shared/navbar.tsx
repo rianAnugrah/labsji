@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
+import { HoveredLink, IconLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
 import { cn } from "../../utils/cn";
 
 
@@ -13,49 +13,73 @@ export default function Navbar({ className }: { className?: string }) {
             className={cn("inset-x-0 w-full mx-auto z-50 h-12", className)}
         >
             <Menu setActive={setActive}>
-                <MenuItem setActive={setActive} active={active} item="Products">
+                <MenuItem setActive={setActive} active={active} item="Modules">
+                    <div className="  text-sm grid grid-cols-4 gap-4 p-4">
+                        <IconLink href="/enterprise">
+                            Module
+                        </IconLink>
+                        <IconLink href="/enterprise">
+                            Module
+                        </IconLink> <IconLink href="/enterprise">
+                            Module
+                        </IconLink> <IconLink href="/enterprise">
+                            Module
+                        </IconLink> <IconLink href="/enterprise">
+                            Module
+                        </IconLink> <IconLink href="/enterprise">
+                            Module
+                        </IconLink> <IconLink href="/enterprise">
+                            Module
+                        </IconLink> <IconLink href="/enterprise">
+                            Module
+                        </IconLink> <IconLink href="/enterprise">
+                            Module
+                        </IconLink> <IconLink href="/enterprise">
+                            Module
+                        </IconLink>
+                    </div>
+                </MenuItem>
+                <MenuItem setActive={setActive} active={active} item="Test">
                     <div className="  text-sm grid grid-cols-2 gap-10 p-4">
                         <ProductItem
-                            title="Algochurn"
-                            href="https://algochurn.com"
+                            title="Personality Test"
+                            href="/personality-test"
                             src="https://assets.aceternity.com/demos/algochurn.webp"
-                            description="Prepare for tech interviews like never before."
+                            description="Test your personality based on briggs mayer"
                         />
                         <ProductItem
-                            title="Tailwind Master Kit"
-                            href="https://tailwindmasterkit.com"
+                            title="IQ Test"
+                            href="#"
                             src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                            description="Production ready Tailwind css components for your next project"
+                            description="Coming Soon"
                         />
                         <ProductItem
-                            title="Moonbeam"
-                            href="https://gomoonbeam.com"
+                            title="Survival Test"
+                            href="#"
                             src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                            description="Never write from scratch again. Go from idea to blog in minutes."
+                            description="Coming Soon"
                         />
                         <ProductItem
-                            title="Rogue"
-                            href="https://userogue.com"
+                            title="Emtional Test"
+                            href="#"
                             src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                            description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+                            description="Coming Soon"
                         />
                     </div>
                 </MenuItem>
                 <MenuItem setActive={setActive} active={active} item="Services">
                     <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="/web-dev">Web Development</HoveredLink>
-                        <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-                        <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-                        <HoveredLink href="/branding">Branding</HoveredLink>
+                        <HoveredLink href="#">Psychological Consultation</HoveredLink>
+                        <HoveredLink href="#">HR Training</HoveredLink>
                     </div>
                 </MenuItem>
 
                 <MenuItem setActive={setActive} active={active} item="Username">
                     <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="/hobby">Profile</HoveredLink>
-                        <HoveredLink href="/individual">Setting</HoveredLink>
-                        <hr />
-                        <HoveredLink href="/enterprise">Logout</HoveredLink>
+                        <HoveredLink href="#">Profile</HoveredLink>
+                        <HoveredLink href="#">Setting</HoveredLink>
+                        <hr className="w-40" />
+                        <HoveredLink href="#">Logout</HoveredLink>
                     </div>
                 </MenuItem>
             </Menu>

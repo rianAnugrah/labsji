@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("flex h-screen w-full flex-col bg-red-500",inter.className  ) }>
+      <body className={cn("flex h-screen w-full flex-col",inter.className  ) }>
           <Navbar />
         <div className="w-full h-[calc(100svh_-_48px)] overflow-scroll ">
 
