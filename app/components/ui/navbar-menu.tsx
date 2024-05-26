@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { cn } from "@/app/utils/cn";
 
 const transition = {
   type: "spring",
@@ -18,10 +19,12 @@ export const MenuItem = ({
   active,
   item,
   children,
+  className,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
+  className?: string;
   children?: React.ReactNode;
 }) => {
   return (
@@ -40,7 +43,7 @@ export const MenuItem = ({
         >
           {active === item && (
             // <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
-            <div className="absolute top-[calc(100%_+_0px)]  transform  pt-4">
+            <div className={cn("absolute top-[calc(100%_+_0px)]  transform  pt-4", className)} >
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
@@ -56,8 +59,9 @@ export const MenuItem = ({
             </div>
           )}
         </motion.div>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 };
 
@@ -71,7 +75,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative  border border-zinc-400 dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-start space-x-4 px-4 h-12 items-center "
+      className="relative  border border-zinc-400 dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex w-full justify-start space-x-4 px-4 h-12 items-center "
     >
       {children}
     </nav>
