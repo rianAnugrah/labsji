@@ -67,24 +67,26 @@ export default function PersonalityTest() {
     useEffect(() => { console.table(answer) }, [answer])
 
     return (
-        <div className='w-full h-full p-10 flex '>
+        <div className='w-2/3 h-full p-10 mx-auto flex'>
             <div className='w-20 h-full  flex items-center justify-center'>
                 {active !== 0 &&
 
-                    <button onClick={handlePrev} className='border p-2 bg-red-400 text-white'>Prev</button>
+                    <button onClick={handlePrev} className='border p-2 rounded bg-zinc-100 text-white'> <svg className='rotate-180' width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></button>
                 }
             </div>
 
-            <div className='w-full px-4'>
+            <div className='w-full p-4 border rounded-xl bg-blue-50'>
 
-                <div className='block w-full h-10 text-xl font-bold bg-green-200 leading-[40px] text-center text-green-700'>
+                <div className={`block w-full h-10 text-xl font-bold bg-blue-50 leading-[40px] text-center `}>
 
-                    {personality && active === questions.length - 1 && <h2>Your are {personality}!</h2>}
+                    {personality && active === questions.length - 1 && <h2 className='bg-blue-300 text-blue-700 rounded'>Your are {personality}!</h2>}
                 </div>
 
-                Quiz number {active + 1}
+                <p className='w-full my-4 text-center '>Quiz number {active + 1}</p>
 
-                <div className='w-full flex items-center justify-center text-center h-40'>{questions[active].label}</div>
+                <div className='w-full flex items-center justify-center text-center h-40 font-bold text-lg'>{questions[active].label}</div>
                 {/* <p>{questions[active].sublabel}</p> */}
 
                 <div className='flex flex-col gap-2 mb-5'>
@@ -104,7 +106,11 @@ export default function PersonalityTest() {
                 {
                     active !== questions.length - 1 && answer[active].answer &&
 
-                    <button onClick={handleNext} className='border p-2 bg-red-400 text-white'>Next</button>
+                    <button onClick={handleNext} className='border p-2 rounded bg-zinc-100 text-white'>
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
                 }
             </div>
 
