@@ -92,7 +92,7 @@ export default function PersonalityTest() {
                 <div className='flex flex-col gap-2 mb-5'>
                     {
                         questions[active].options.map((opt, i) => {
-                            return <button onClick={() => handleChoose(active, opt.value)} className={`${answer[active].answer === opt.value && `bg-green-500 text-white border-green-600 border`} rounded p-4 w-full bg-zinc-200 hover:bg-green-300`}>{opt.option}</button>
+                            return <button  key={i} onClick={() => handleChoose(active, opt.value)} className={`${answer[active].answer === opt.value && `bg-green-500 text-white border-green-600 border`} rounded p-4 w-full bg-zinc-200 hover:bg-green-300`}>{opt.option}</button>
                         }
 
                         )

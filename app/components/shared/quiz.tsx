@@ -133,7 +133,7 @@ export default function Quiz() {
             <div className='flex gap-2 mb-5'>
                 {
                     questions[active].options.map((opt, i) => {
-                        return <button onClick={() => handleChoose(active, opt.value)} className='border p-4 bg-zinc-200'>{opt.option}</button>
+                        return <button key={i} onClick={() => handleChoose(active, opt.value)} className='border p-4 bg-zinc-200'>{opt.option}</button>
                     }
 
                     )
