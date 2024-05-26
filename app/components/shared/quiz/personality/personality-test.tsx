@@ -18,8 +18,8 @@ export default function PersonalityTest() {
         setActive(prevActive => prevActive - 1)
     }
 
-    const handleChoose = (id, opt) => {
-        const temp = answer.map((q, i) => {
+    const handleChoose = (id: any, opt: any) => {
+        const temp = answer.map((q: any, i: any) => {
 
             return {
                 id: q.id,
@@ -91,8 +91,8 @@ export default function PersonalityTest() {
 
                 <div className='flex flex-col gap-2 mb-5'>
                     {
-                        questions[active].options.map((opt, i) => {
-                            return <button  key={i} onClick={() => handleChoose(active, opt.value)} className={`${answer[active].answer === opt.value && `bg-green-500 text-white border-green-600 border`} rounded p-4 w-full bg-zinc-200 hover:bg-green-300`}>{opt.option}</button>
+                        questions[active].options.map((opt: any, i: any) => {
+                            return <button key={i} onClick={() => handleChoose(active, opt.value)} className={`${answer[active].answer === opt.value && `bg-green-500 text-white border-green-600 border`} rounded p-4 w-full bg-zinc-200 hover:bg-green-300`}>{opt.option}</button>
                         }
 
                         )

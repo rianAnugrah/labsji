@@ -73,8 +73,8 @@ export default function Quiz() {
         setActive(prevActive => prevActive - 1)
     }
 
-    const handleChoose = (id, opt) => {
-        const temp = answer.map((q, i) => {
+    const handleChoose = (id: any, opt: any) => {
+        const temp = answer.map((q: any, i: any) => {
 
             return {
                 id: q.id,
@@ -132,7 +132,7 @@ export default function Quiz() {
 
             <div className='flex gap-2 mb-5'>
                 {
-                    questions[active].options.map((opt, i) => {
+                    questions[active].options.map((opt: any, i: any) => {
                         return <button key={i} onClick={() => handleChoose(active, opt.value)} className='border p-4 bg-zinc-200'>{opt.option}</button>
                     }
 
